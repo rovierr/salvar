@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    transition: background-color 0.3s ease-in-out; 
+  }
+
+  .window {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(to bottom, white, white);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .title-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    user-select: none;
+  }
+
+  .title-bar-button {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #red-button {
+    background-color: red;
+  }
+
+  #green-button {
+    background-color: green;
+  }
+
+  #blue-button {
+    background-color: blue;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; 
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="window">
+  <div class="title-bar">
+    <div class="title-bar-button" id="red-button"></div>
+    <div class="title-bar-button" id="green-button"></div>
+    <div class="title-bar-button" id="blue-button"></div>
+  </div>
+  <div class="content">
+    <img src="C:\Users\alpha\OneDrive\Documents\imagem\Fmfh06rXEAAanYi.png" alt="Foto de Perfil" class="profile-picture">
+  </div>
+</div>
+
+<script>
+  const profilePicture = document.querySelector('.profile-picture');
+  const body = document.body;
+
+  let isDarkMode = false; 
+
+  profilePicture.addEventListener('click', () => {
+    isDarkMode = !isDarkMode; 
+
+    if (isDarkMode) {
+      body.style.backgroundColor = 'black';
+    } else {
+      body.style.backgroundColor = 'white';
+    }
+  });
+</script>
+
+</body>
+</html>
